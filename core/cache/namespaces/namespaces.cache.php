@@ -11,6 +11,12 @@
     'path' => 'F:/OpenServer/domains/MODX.loc/core/components/admintools/',
     'assets_path' => '',
   ),
+  'bannery' => 
+  array (
+    'name' => 'bannery',
+    'path' => 'F:/OpenServer/domains/MODX.loc/core/components/bannery/',
+    'assets_path' => '',
+  ),
   'clientconfig' => 
   array (
     'name' => 'clientconfig',
@@ -22,6 +28,12 @@
     'name' => 'core',
     'path' => 'F:/OpenServer/domains/MODX.loc/manager/',
     'assets_path' => 'F:/OpenServer/domains/MODX.loc/manager/assets/',
+  ),
+  'migx' => 
+  array (
+    'name' => 'migx',
+    'path' => 'F:/OpenServer/domains/MODX.loc/core/components/migx/',
+    'assets_path' => 'F:/OpenServer/domains/MODX.loc/assets/components/migx/',
   ),
   'pdotools' => 
   array (

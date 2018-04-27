@@ -238,6 +238,26 @@
       ),
       1 => 
       array (
+        'text' => 'BannerY',
+        'parent' => 'components',
+        'action' => '3',
+        'description' => 'BannerY - управление рекламой',
+        'icon' => 'images/icons/plugin.gif',
+        'menuindex' => 0,
+        'params' => '',
+        'handler' => '',
+        'permissions' => '',
+        'namespace' => 'core',
+        'action_controller' => 'index',
+        'action_namespace' => 'bannery',
+        'id' => 'BannerY',
+        'children' => 
+        array (
+        ),
+        'controller' => '',
+      ),
+      2 => 
+      array (
         'text' => 'Установщик',
         'parent' => 'components',
         'action' => 'workspaces',
@@ -251,6 +271,26 @@
         'action_controller' => NULL,
         'action_namespace' => NULL,
         'id' => 'installer',
+        'children' => 
+        array (
+        ),
+        'controller' => '',
+      ),
+      3 => 
+      array (
+        'text' => 'MIGX',
+        'parent' => 'components',
+        'action' => 'index',
+        'description' => '',
+        'icon' => '',
+        'menuindex' => 0,
+        'params' => '&configs=packagemanager||migxconfigs||setup',
+        'handler' => '',
+        'permissions' => '',
+        'namespace' => 'migx',
+        'action_controller' => NULL,
+        'action_namespace' => NULL,
+        'id' => 'migx',
         'children' => 
         array (
         ),

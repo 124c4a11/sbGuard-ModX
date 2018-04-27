@@ -41,6 +41,7 @@ psd
 # ModX folders to ignore
 connectors
 manager
+core/cache
 
 # Node.JS
 node_modules

@@ -43,6 +43,8 @@
   'auto_check_pkg_updates_cache_expire' => '15',
   'auto_isfolder' => '1',
   'auto_menuindex' => '1',
+  'bannery_click' => 'bannerclick',
+  'bannery_media_source' => '',
   'base_help_url' => '//docs.modx.com/display/revolution20/',
   'blocked_minutes' => '60',
   'cache_action_map' => '1',
