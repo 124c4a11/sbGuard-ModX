@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <script>
+        (function (w) {
+            "use strict";
+            var loadCSS = function (href, before, media) {
+                var doc = w.document;
+                var ss = doc.createElement("link");
+                var ref;
+                if (before) {
+                    ref = before;
+                }
+                else {
+                    var refs = ( doc.body || doc.getElementsByTagName("head")[0] ).childNodes;
+                    ref = refs[refs.length - 1];
+                }
+                var sheets = doc.styleSheets;
+                ss.rel = "stylesheet";
+                ss.href = href;
+                ss.media = "only x";
+                function ready(cb) {
+                    if (doc.body) {
+                        return cb();
+                    }
+                    setTimeout(function () {
+                        ready(cb);
+                    });
+                }
+
+                ready(function () {
+                    ref.parentNode.insertBefore(ss, ( before ? ref : ref.nextSibling ));
+                });
+                var onloadcssdefined = function (cb) {
+                    var resolvedHref = ss.href;
+                    var i = sheets.length;
+                    while (i--) {
+                        if (sheets[i].href === resolvedHref) {
+                            return cb();
+                        }
+                    }
+                    setTimeout(function () {
+                        onloadcssdefined(cb);
+                    });
+                };
+
+                function loadCB() {
+                    if (ss.addEventListener) {
+                        ss.removeEventListener("load", loadCB);
+                    }
+                    ss.media = media || "all";
+                }
+
+                if (ss.addEventListener) {
+                    ss.addEventListener("load", loadCB);
+                }
+                ss.onloadcssdefined = onloadcssdefined;
+                onloadcssdefined(loadCB);
+                return ss;
+            };
+            if (typeof exports !== "undefined") {
+                exports.loadCSS = loadCSS;
+            }
+            else {
+                w.loadCSS = loadCSS;
+            }
+        }(typeof global !== "undefined" ? global : this));
+        (function (w) {
+            if (!w.loadCSS) {
+                return;
+            }
+            var rp = loadCSS.relpreload = {};
+            rp.support = function () {
+                try {
+                    return w.document.createElement("link").relList.supports("preload");
+                } catch (e) {}
+            };
+            rp.poly = function () {
+                var links = w.document.getElementsByTagName("link");
+                for (var i = 0; i < links.length; i++) {
+                    var link = links[i];
+                    if (link.rel === "preload" && link.getAttribute("as") === "style") {
+                        w.loadCSS(link.href, link);
+                        link.rel = null;
+                    }
+                }
+            };
+            if (!rp.support()) {
+                rp.poly();
+                var run = w.setInterval(rp.poly, 300);
+                if (w.addEventListener) {
+                    w.addEventListener("load", function () {
+                        w.clearInterval(run);
+                    })
+                }
+            }
+        }(this));
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&amp;subset=cyrillic" rel="preload"
+          as="style"
+          onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="assets/libs/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="assets/libs/photoswipe/default-skin.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="top-site-line container full-width-flex-container">
+    <a href="index.html" class="logo-block--top-site-line flexr-hack">
+        <svg class="site-icon" aria-hidden="true">
+            <use xlink:href="assets/img/svg/logo.svg#logo"></use>
+        </svg>
+    </a>
+    <span class="slogan"></span>
+    <label for="mob-menu" class="mob-menu-checker flexl-hack">
+        <svg class="site-icon icon-ellipsis_vertical" aria-hidden="true">
+            <use xlink:href="assets/img/svg/svg-symbols.svg#ellipsis_vertical"></use>
+        </svg>
+    </label>
+    <div class="add-nav flexr-hack">
+        <a href="#" class="add-nav__link">
+            <svg class="site-icon icon-user" aria-hidden="true">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#user"></use>
+            </svg>
+            <span>Мой профиль</span>
+        </a>
+        <a href="#" class="add-nav__link">
+            <svg class="site-icon icon-heart" aria-hidden="true">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#heart"></use>
+            </svg>
+            <span>Избранное</span>
+        </a>
+        <a href="office.html" class="add-nav__link">
+            <svg class="site-icon icon-signin" aria-hidden="true">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#signin"></use>
+            </svg>
+            <span>Вход</span>
+        </a>
+    </div>
+    <div class="add-settings flexl-hack">
+        <div class="add-settings__item social-block">
+            <a href="#" class="social-block__social-item" rel="nofollow noreferrer">
+                <svg class="site-icon icon-vk" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#vk"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-block__social-item" rel="nofollow noreferrer">
+                <svg class="site-icon icon-facebook" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#facebook"></use>
+                </svg>
+            </a>
+            <a href="#" class="social-block__social-item" rel="nofollow noreferrer">
+                <svg class="site-icon icon-twitter_sign" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#twitter_sign"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<header class="header container full-width-flex-container">
+    <a href="index.html" class="logo-block flexr-hack">
+        <svg class="site-icon" aria-hidden="true">
+            <use xlink:href="assets/img/svg/logo.svg#logo"></use>
+        </svg>
+    </a>
+    <div class="search-and-contacts-block">
+        <div class="contacts-block" itemscope itemtype="http://schema.org/PostalAddress">
+            <div class="contacts-block__phone">
+                <svg class="site-icon icon-phone" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#phone"></use>
+                </svg>
+                <a href="tel:+88006845594" class="contacts-block__phone-link" rel="nofollow noreferrer" itemprop="telephone">8 (800) 684-55-94</a>
+            </div>
+            <div class="contacts-block__email">
+                <svg class="site-icon icon-envelope_alt" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#envelope_alt"></use>
+                </svg>
+                <span itemprop="email">info@sbguard.ru</span>
+            </div>
+        </div>
+        <form action="/build/search.html" id="search-form" class="search-form" method="get">
+            <input type="search" name="search" id="search" class="search-form__field" title="Поиск по сайту"
+                   placeholder="Введите поисковую фразу">
+            <button type="submit" class="search-form__button">
+                <svg class="site-icon icon-search" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#search"></use>
+                </svg>
+            </button>
+        </form>
+    </div>
+    <div class="cart-block flexl-hack fix-min-height">
+        <div class="cart-block__cart-cost" data-currency="&#8381;">47 500</div>
+        <a href="basket.html" class="cart-block__cart-icon" data-count="0">
+            <svg class="site-icon icon-shopping_cart" aria-hidden="true">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#shopping_cart"></use>
+            </svg>
+        </a>
+    </div>
+</header>
+<nav class="nav-block fix-min-height" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <ul class="nav-list container">
+        <li class="nav-list__nav-list-item fix-min-height">
+            <a href="index.html" class="nav-list__link" itemprop="url">Главная</a>
+        </li>
+        <li class="nav-list__nav-list-item fix-min-height">
+            <a href="catalog.html" class="nav-list__link" itemprop="url">Каталог</a>
+        </li>
+        <li class="nav-list__nav-list-item fix-min-height">
+            <a href="services.html" class="nav-list__link" itemprop="url">Услуги</a>
+        </li>
+        <li class="nav-list__nav-list-item fix-min-height">
+            <a href="blog.html" class="nav-list__link" itemprop="url">Блог</a>
+        </li>
+        <li class="nav-list__nav-list-item fix-min-height">
+            <a href="contacts.html" class="nav-list__link" itemprop="url">Контакты</a>
+        </li>
+        <li class="nav-list__nav-list-item fix-min-height">
+            <a href="about.html" class="nav-list__link" itemprop="url">О компании</a>
+        </li>
+    </ul>
+</nav>
+<div class="content-wrapper container">
+  <main class="main-content main-content--text">
+    <div class="breadcrumbs">
+    <a href="#" class="breadcrumbs__item">Главная</a>
+    &nbsp;/&nbsp;
+    <a href="#" class="breadcrumbs__item">Услуги</a>
+    &nbsp;/&nbsp;
+    <a class="breadcrumbs__item breadcrumbs__item--active">Контакты</a>
+</div>
+    <h1>Результаты поиска</h1>
+    <div class="search-result">
+      <div class="search-result-header">
+        <div class="search-result-header__title">Найдено <span>24</span> позиции в результате поиска по запросу
+          "<span>Камера</span>"
+        </div>
+      </div>
+      <ul class="search-result-list">
+        <li class="search-result-list__result-item">
+          <a href="" class="search-result-list__result-link">Hikvision DS-2CD2412F-IW Ivideon</a>
+          <div class="search-result-breadcrumbs">
+            Раздел: <span class="search-result-breadcrumbs__value">IP-камеры видеонаблюдения</span>
+          </div>
+          <div class="search-result-list__result-desc"> Уход и заточка
+            Hikvision DS-2CD2412F-IW Ivideon IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW Ivideon с облачным сервисом
+            видеонаблюдения Ivideon! IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW оснащена ИК-фильтром, работающим в режиме
+            День/Ночь: фильтр корректирует цветовую передачу дне ...
+          </div>
+        </li>
+        <li class="search-result-list__result-item">
+          <a href="" class="search-result-list__result-link">Hikvision DS-2CD2412F-IW Ivideon</a>
+          <div class="search-result-breadcrumbs">
+            Раздел: <span class="search-result-breadcrumbs__value">IP-камеры видеонаблюдения</span>
+          </div>
+          <div class="search-result-list__result-desc"> Уход и заточка
+            Hikvision DS-2CD2412F-IW Ivideon IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW Ivideon с облачным сервисом
+            видеонаблюдения Ivideon! IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW оснащена ИК-фильтром, работающим в режиме
+            День/Ночь: фильтр корректирует цветовую передачу дне ...
+          </div>
+        </li>
+        <li class="search-result-list__result-item">
+          <a href="" class="search-result-list__result-link">Hikvision DS-2CD2412F-IW Ivideon</a>
+          <div class="search-result-breadcrumbs">
+            Раздел: <span class="search-result-breadcrumbs__value">IP-камеры видеонаблюдения</span>
+          </div>
+          <div class="search-result-list__result-desc"> Уход и заточка
+            Hikvision DS-2CD2412F-IW Ivideon IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW Ivideon с облачным сервисом
+            видеонаблюдения Ivideon! IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW оснащена ИК-фильтром, работающим в режиме
+            День/Ночь: фильтр корректирует цветовую передачу дне ...
+          </div>
+        </li>
+        <li class="search-result-list__result-item">
+          <a href="" class="search-result-list__result-link">Hikvision DS-2CD2412F-IW Ivideon</a>
+          <div class="search-result-breadcrumbs">
+            Раздел: <span class="search-result-breadcrumbs__value">IP-камеры видеонаблюдения</span>
+          </div>
+          <div class="search-result-list__result-desc"> Уход и заточка
+            Hikvision DS-2CD2412F-IW Ivideon IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW Ivideon с облачным сервисом
+            видеонаблюдения Ivideon! IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW оснащена ИК-фильтром, работающим в режиме
+            День/Ночь: фильтр корректирует цветовую передачу дне ...
+          </div>
+        </li>
+        <li class="search-result-list__result-item">
+          <a href="" class="search-result-list__result-link">Hikvision DS-2CD2412F-IW Ivideon</a>
+          <div class="search-result-breadcrumbs">
+            Раздел: <span class="search-result-breadcrumbs__value">IP-камеры видеонаблюдения</span>
+          </div>
+          <div class="search-result-list__result-desc"> Уход и заточка
+            Hikvision DS-2CD2412F-IW Ivideon IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW Ivideon с облачным сервисом
+            видеонаблюдения Ivideon! IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW оснащена ИК-фильтром, работающим в режиме
+            День/Ночь: фильтр корректирует цветовую передачу дне ...
+          </div>
+        </li>
+        <li class="search-result-list__result-item">
+          <a href="" class="search-result-list__result-link">Hikvision DS-2CD2412F-IW Ivideon</a>
+          <div class="search-result-breadcrumbs">
+            Раздел: <span class="search-result-breadcrumbs__value">IP-камеры видеонаблюдения</span>
+          </div>
+          <div class="search-result-list__result-desc"> Уход и заточка
+            Hikvision DS-2CD2412F-IW Ivideon IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW Ivideon с облачным сервисом
+            видеонаблюдения Ivideon! IP-<mark>камера</mark> Hikvision DS-2CD2412F-IW оснащена ИК-фильтром, работающим в режиме
+            День/Ночь: фильтр корректирует цветовую передачу дне ...
+          </div>
+        </li>
+
+      </ul>
+      <div class="pagination pagination--center">
+        <ul id="mse2_pagination" class="pagination-list">
+          <li class="pagination-list__item">
+            <a class="pagination-list__link pagination-list__link--without-border" href="katalog">
+              <svg class="site-icon icon-heart" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:href="assets/img/svg/svg-symbols.svg#angle_left"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="pagination-list__item"><a class="pagination-list__link" href="katalog">1</a></li>
+          <li class="pagination-list__item pagination-item__active"><a class="pagination-list__link">2</a>
+          </li>
+          <li class="pagination-list__item"><a class="pagination-list__link" href="katalog?page=3">3</a></li>
+          <li class="pagination-list__item"><a class="pagination-list__link" href="katalog?page=4">4</a></li>
+          <li class="pagination-list__item">
+            <a class="pagination-list__link pagination-list__link--without-border" href="katalog">
+              <svg class="site-icon icon-heart" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:href="assets/img/svg/svg-symbols.svg#angle_right"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <aside class="sidebar-block">
+    <div class="side-nav">
+        <div class="side-nav__header">
+            <svg class="site-icon icon-heart" aria-hidden="true">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#reorder"></use>
+            </svg>
+            <span>Видеонаблюдение</span>
+        </div>
+        <div class="side-nav__side-nav-list">
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#flat"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">В квартире</span>
+            </a>
+            <div class="side-nav__side-nav-list-item drop-checker">
+                <div class="side-nav__dropdown-checker">
+                    <svg class="site-icon icon-heart" aria-hidden="true">
+                        <use xlink:href="assets/img/svg/svg-symbols.svg#office"></use>
+                    </svg>
+                    <span class="side-nav__side-nav-list-item-link">В офисе</span>
+                </div>
+                <div class="drop-down-menu">
+                    <ul class="drop-down-list">
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Techvision</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Yamaha</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Kingston</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Remingtion</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Valkiria</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Robotstream</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Zendanga</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">GibsonLesPoul</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Green Krafts Wagen</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Zendanga</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">GibsonLesPoul</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Kingston</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Yamaha</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Green Krafts Wagen</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">GibsonLesPoul</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Robotstream</a></li>
+                    </ul>
+                </div>
+                <svg class="site-icon drop-checker__icon" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#caret_right"></use>
+                </svg>
+            </div>
+            <div class="side-nav__side-nav-list-item drop-checker">
+                <div class="side-nav__dropdown-checker">
+                    <svg class="site-icon icon-heart" aria-hidden="true">
+                        <use xlink:href="assets/img/svg/svg-symbols.svg#office"></use>
+                    </svg>
+                    <span class="side-nav__side-nav-list-item-link">В офисе</span>
+                </div>
+                <div class="drop-down-menu">
+                    <ul class="drop-down-list">
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Techvision</a></li>
+                        <li class="drop-down-list__item"><a href="#" class="drop-down-list__link">Yamaha</a></li>
+                    </ul>
+                </div>
+                <svg class="site-icon drop-checker__icon" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#caret_right"></use>
+                </svg>
+            </div>
+
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#store"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">В магазине</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#restoran"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">В ресторане</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#hospital"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">В больнице</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#house"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">В частном доме</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#sklad"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">На складе</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#hotel"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">В гостинице</span>
+            </a>
+        </div>
+    </div>
+    <div class="side-nav">
+        <div class="side-nav__header">
+            <svg class="site-icon icon-heart" aria-hidden="true">
+                <use xlink:href="assets/img/svg/svg-symbols.svg#reorder"></use>
+            </svg>
+            <span>Контроль доступа</span>
+        </div>
+        <div class="side-nav__side-nav-list">
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#cod_zamok"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">Кодовые замки</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#turnik"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">Установка турникетов</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#vremya"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">Учёт времени персонала</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#electro_zamok"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">Электронные замки</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#avtomat_vorota"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">Автоматические ворота</span>
+            </a>
+            <a href="#" class="side-nav__side-nav-list-item">
+                <svg class="site-icon icon-heart" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#support"></use>
+                </svg>
+                <span class="side-nav__side-nav-list-item-link">Обслуживание СКУД</span>
+            </a>
+        </div>
+    </div>
+</aside>
+</div>
+
+<footer class="footer container full-width-flex-container">
+    <div class="footer-content-block flexr-hack">
+        <a href="#" class="logo-block--footer">
+            <svg class="site-icon" aria-hidden="true">
+                <use xlink:href="assets/img/svg/logo.svg#logo"></use>
+            </svg>
+        </a>
+        <div class="footer-log__desc">
+            Продажа, замена и установка систем видеонаблюдения и систем контроля доступа.
+        </div>
+    </div>
+
+    <div class="footer-content-block flexl-hack">
+        <div class="footer-content-block__title">
+            Услуги
+        </div>
+        <div class="footer-content-block__desc">
+            <ul class="footer-list">
+                <li><a class="footer-list-link" href="#">Установка видеонаблюдения</a></li>
+                <li><a class="footer-list-link" href="#">Установка СКУД</a></li>
+                <li><a class="footer-list-link" href="#">Замена оборудования</a></li>
+                <li><a class="footer-list-link" href="#">Подбор и продажа оборудования</a></li>
+                <li><a class="footer-list-link" href="#">Установка аналоговой ситсемы наблюдения</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-content-block flexl-hack">
+        <div class="footer-content-block__title">
+            Другие разделы
+        </div>
+        <div class="footer-content-block__desc">
+            <ul class="footer-list">
+                <li><a class="footer-list-link" href="#">FAQ</a></li>
+                <li><a class="footer-list-link" href="#">Наши работы</a></li>
+                <li><a class="footer-list-link" href="#">Отзывы клиентов</a></li>
+                <li><a class="footer-list-link" href="#">Как сделать заказ</a></li>
+                <li><a class="footer-list-link" href="#">Доставка</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-content-block flexl-hack">
+        <div class="footer-content-block__title">
+            Контактная информация
+        </div>
+        <div class="footer-content-block__desc">
+            <ul class="footer-list contacts-block--footer">
+                <li>
+                    <svg class="site-icon" aria-hidden="true">
+                        <use xlink:href="assets/img/svg/svg-symbols.svg#map_marker"></use>
+                    </svg>
+                    <span class="footer-list__item-text">Москва, Высоковольтный пр-д. д.1 стр.49</span>
+                </li>
+                <li>
+                    <svg class="site-icon" aria-hidden="true">
+                        <use xlink:href="assets/img/svg/svg-symbols.svg#phone"></use>
+                    </svg>
+                    <div>
+                        <a href="tel:+88006845594" rel="nofollow noreferrer" class="footer-list__item-text footer-list-link">8 (800) 684-55-94</a>
+                        <a href="tel:+88006845594" rel="nofollow noreferrer" class="footer-list__item-text footer-list-link">8 (800) 684-55-94</a>
+                    </div>
+                </li>
+                <li>
+                    <svg class="site-icon" aria-hidden="true">
+                        <use xlink:href="assets/img/svg/svg-symbols.svg#envelope_alt"></use>
+                    </svg>
+                    <span class="footer-list__item-text">info@sbguard.ru</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Закрыть (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Поделиться"></button>
+                <button class="pswp__button pswp__button--fs" title="Полный экран"></button>
+                <button class="pswp__button pswp__button--zoom" title="Масштабирование"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay">
+    <input type="checkbox" id="mob-menu" class="mob-menu-checker-input" aria-hidden="true" title="Мобильное меню">
+    <div class="mob-menu-block">
+        <ul class="nav-list nav-list--mob">
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="index.html" class="nav-list__link">Главная</a>
+            </li>
+            <li class="nav-list__nav-list-item fix-min-height">
+                <label for="mob-catalog" class="nav-list__link nav-list__link--label">Каталог</label>
+                <input type="checkbox" id="mob-catalog" class="mob-menu-checker-input" aria-hidden="true" title="Раздел каталог">
+                <label for="mob-catalog" class="nav-list__link nav-list__link--back">Назад</label>
+                <div class="mob-menu-block mob-menu-block--inner">
+                    <ul class="nav-list nav-list--mob">
+                        <li class="nav-list__nav-list-item fix-min-height">
+                            <a href="catalog.html" class="nav-list__link">Видеонаблюдение</a>
+                        </li>
+                        <li class="nav-list__nav-list-item fix-min-height">
+                            <a href="services.html" class="nav-list__link">СКУД</a>
+                        </li>
+                        <li class="nav-list__nav-list-item fix-min-height">
+                            <a href="blog.html" class="nav-list__link">Сигнализация</a>
+                        </li>
+                        <li class="nav-list__nav-list-item fix-min-height">
+                            <a href="blog.html" class="nav-list__link">Все товары</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="services.html" class="nav-list__link">Услуги</a>
+            </li>
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="blog.html" class="nav-list__link">Блог</a>
+            </li>
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="contacts.html" class="nav-list__link">Контакты</a>
+            </li>
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="about.html" class="nav-list__link">О компании</a>
+            </li>
+        </ul>
+        <ul class="nav-list nav-list--mob">
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="#" class="nav-list__link">Вход / регистрация</a>
+            </li>
+            <li class="nav-list__nav-list-item fix-min-height">
+                <a href="#" class="nav-list__link">Личный кабинет</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<!--<script src="assets/libs/in-view/in-view.min.js"></script>-->
+<script src="assets/libs/inviewjq/jquery.inview.min.js"></script>
+<script src="assets/libs/svg4everybody/svg4everybody.min.js"></script>
+<script src="assets/libs/object-fit/ofi.min.js"></script>
+<script defer src="assets/libs/photoswipe/photoswipe.min.js"></script>
+<script defer src="assets/libs/photoswipe/photoswipe-ui-default.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
