@@ -1,7 +1,7 @@
 <?php  return array (
   'company_email' => 'info@sbguard.ru',
-  'company_phone' => '8 (800) 684-55-94',
-  'company_phone2' => '8 (800) 864-55-94',
+  'company_phone' => '78006845594',
+  'company_phone2' => '78008465594',
   'company_address' => 'Москва, Высоковольтный пр-д. д.1 стр.49',
   'company_fb' => 'https://www.facebook.com',
   'company_tw' => 'https://twitter.com/?lang=ru',

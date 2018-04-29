@@ -18,8 +18,8 @@
             <use xlink:href="assets/img/svg/svg-symbols.svg#phone"></use>
           </svg>
           <div>
-            <span class="footer-list__item-text">8 (800) 684-55-94</span>
-            <span class="footer-list__item-text">8 (800) 684-55-94</span>
+            <span class="footer-list__item-text">{$_modx->config.company_phone|phone_format}</span>
+            <span class="footer-list__item-text">{$_modx->config.company_phone2|phone_format}</span>
           </div>
         </li>
         <li>
@@ -32,34 +32,27 @@
 
       <h2>Расположение и схемы проезда</h2>
       <div id="map" class="map-container" style="height: 400px"></div>
-      <a class="button-link" href="https://yandex.ru/maps/-/CZxsiUJg" target="_blank" rel="nofollow noreferrer">Схема
-        проезда транспортом</a>
-      <a class="button-link" href="https://yandex.ru/maps/-/CZxsjB8v" target="_blank" rel="nofollow noreferrer">Как
-        добраться пешком</a>
+      <a class="button-link" href="https://yandex.ru/maps/-/CZxsiUJg" target="_blank" rel="nofollow noreferrer">Схема проезда транспортом</a>
+      <a class="button-link" href="https://yandex.ru/maps/-/CZxsjB8v" target="_blank" rel="nofollow noreferrer">Как добраться пешком</a>
       <hr>
 
       <h2>Напишите нам</h2>
-      <form class="form" action="/build/contacts.html" method="POST" novalidate>
-        <div class="contact-form">
-          <div class="form__field">
-            <label for="name">Имя</label>
-            <input id="name" type="text" name="name" placeholder="Введите имя" required>
-          </div>
-          <div class="form__field">
-            <label for="email">E-mail</label>
-            <input id="email" type="email" name="email" placeholder="Введите почту" required>
-          </div>
-          <div class="form__field">
-            <label for="phone">Телефон</label>
-            <input id="phone" type="tel" name="phone" placeholder="Введите телефон">
-          </div>
-          <div class="form__field">
-            <label for="message">Текст сообщения</label>
-            <textarea id="message" name="message" placeholder="Введите текст сообщения" required></textarea>
-          </div>
-        </div>
-        <button type="submit" class="button button--fix-size-150">Отправить</button>
-      </form>
+
+      {$_modx->runSnippet('!AjaxForm', [
+        'snippet' => 'FormIt',
+        'hooks' => 'email,FromItSaveForm',
+        'form' => '@FILE chunks/forms/contactForm.tpl',
+        'formName' => 'Форма со страницы контакты',
+        'formFields' => 'name,email,phone',
+        'fieldsNames' => 'name==Имя,email==E-mail,phone==Телефон',
+        'validate' => 'name:required,email:email:required,phone:required,message:required',
+        'validationErrorMessage' => 'В форме содержатся ошибки!',
+        'successMessage' => 'Сообщение успешно отправлено',
+        'emailTpl' => '@FILE chunks/emails/contactEmail.tpl',
+        'emailTo' => $_modx->config.company_email,
+        'emailSubject' => 'Письмо со страницы контакты',
+        'emailFromName' => 'sbGuard'
+      ])}
     </main>
     {include 'file:chunks/sidebar.tpl'}
   </div>

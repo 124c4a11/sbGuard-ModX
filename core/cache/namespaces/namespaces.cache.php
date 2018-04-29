@@ -11,6 +11,12 @@
     'path' => 'F:/OpenServer/domains/MODX.loc/core/components/admintools/',
     'assets_path' => '',
   ),
+  'ajaxform' => 
+  array (
+    'name' => 'ajaxform',
+    'path' => 'F:/OpenServer/domains/MODX.loc/core/components/ajaxform/',
+    'assets_path' => '',
+  ),
   'bannery' => 
   array (
     'name' => 'bannery',
@@ -23,11 +29,23 @@
     'path' => 'F:/OpenServer/domains/MODX.loc/core/components/clientconfig/',
     'assets_path' => 'F:/OpenServer/domains/MODX.loc/assets/components/clientconfig/',
   ),
+  'controlerrorlog' => 
+  array (
+    'name' => 'controlerrorlog',
+    'path' => 'F:/OpenServer/domains/MODX.loc/core/components/controlerrorlog/',
+    'assets_path' => '',
+  ),
   'core' => 
   array (
     'name' => 'core',
     'path' => 'F:/OpenServer/domains/MODX.loc/manager/',
     'assets_path' => 'F:/OpenServer/domains/MODX.loc/manager/assets/',
+  ),
+  'formit' => 
+  array (
+    'name' => 'formit',
+    'path' => 'F:/OpenServer/domains/MODX.loc/core/components/formit/',
+    'assets_path' => 'F:/OpenServer/domains/MODX.loc/assets/components/formit/',
   ),
   'migx' => 
   array (

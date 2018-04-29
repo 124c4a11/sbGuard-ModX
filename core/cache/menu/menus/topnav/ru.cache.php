@@ -258,6 +258,26 @@
       ),
       2 => 
       array (
+        'text' => 'FormIt',
+        'parent' => 'components',
+        'action' => '4',
+        'description' => 'Просмотреть все заполненные формы',
+        'icon' => '',
+        'menuindex' => 0,
+        'params' => '',
+        'handler' => '',
+        'permissions' => '',
+        'namespace' => 'core',
+        'action_controller' => 'index',
+        'action_namespace' => 'formit',
+        'id' => 'formit',
+        'children' => 
+        array (
+        ),
+        'controller' => '',
+      ),
+      3 => 
+      array (
         'text' => 'Установщик',
         'parent' => 'components',
         'action' => 'workspaces',
@@ -276,7 +296,7 @@
         ),
         'controller' => '',
       ),
-      3 => 
+      4 => 
       array (
         'text' => 'MIGX',
         'parent' => 'components',

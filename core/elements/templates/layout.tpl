@@ -172,7 +172,9 @@
         <svg class="site-icon icon-phone" aria-hidden="true">
           <use xlink:href="assets/img/svg/svg-symbols.svg#phone"></use>
         </svg>
-        <a href="tel:+88006845594" class="contacts-block__phone-link" rel="nofollow noreferrer" itemprop="telephone">8 (800) 684-55-94</a>
+        <a href="tel:+{$_modx->config.company_phone}" class="contacts-block__phone-link" rel="nofollow noreferrer" itemprop="telephone">
+          {$_modx->config.company_phone|phone_format}
+        </a>
       </div>
       <div class="contacts-block__email">
         <svg class="site-icon icon-envelope_alt" aria-hidden="true">
@@ -260,8 +262,12 @@
             <use xlink:href="assets/img/svg/svg-symbols.svg#phone"></use>
           </svg>
           <div>
-            <a href="tel:+88006845594" rel="nofollow noreferrer" class="footer-list__item-text footer-list-link">8 (800) 684-55-94</a>
-            <a href="tel:+88006845594" rel="nofollow noreferrer" class="footer-list__item-text footer-list-link">8 (800) 684-55-94</a>
+            <a href="tel:+{$_modx->config.company_phone}" rel="nofollow noreferrer" class="footer-list__item-text footer-list-link">
+              {$_modx->config.company_phone|phone_format}
+            </a>
+            <a href="tel:+{$_modx->config.company_phone2}" rel="nofollow noreferrer" class="footer-list__item-text footer-list-link">
+              {$_modx->config.company_phone2|phone_format}
+            </a>
           </div>
         </li>
         <li>
