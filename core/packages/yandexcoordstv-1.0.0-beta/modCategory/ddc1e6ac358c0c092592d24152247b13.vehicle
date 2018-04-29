@@ -1,0 +1,121 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '126347f68fd4911892afb71e93ad2b4c' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => false,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"YandexCoordsTv","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"$corePath = $modx->getOption(\'core_path\',null,MODX_CORE_PATH).\'components\\/yandexcoordstv\\/\';\\nswitch ($modx->event->name) {\\n    case \'OnTVInputRenderList\':\\n        $modx->event->output($corePath.\'tv\\/input\\/\');\\n        break;\\n    case \'OnTVOutputRenderList\':\\n        $modx->event->output($corePath.\'tv\\/output\\/\');\\n        break;\\n    case \'OnTVInputPropertiesList\':\\n        $modx->event->output($corePath.\'tv\\/inputoptions\\/\');\\n        break;\\n    case \'OnTVOutputRenderPropertiesList\':\\n        $modx->event->output($corePath.\'tv\\/properties\\/\');\\n        break;\\n    case \'OnManagerPageBeforeRender\':\\n        break;\\n    \\tcase \'OnDocFormRender\':\\n\\t\\t\\n\\t\\t$jqueryScript = \'<script type=\\"text\\/javascript\\">\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'if(typeof jQuery == \\"undefined\\"){\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'document.write(\\\\\'<script type=\\"text\\/javascript\\" src=\\"\\/\\/yandex.st\\/jquery\\/2.1.1\\/jquery.min.js\\" ><\\/\\\\\'+\\\\\'script>\\\\\');\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'}\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'<\\/script>\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t\\n\\t\\t$modx->regClientStartupScript($jqueryScript, true);\\n\\t\\t\\n\\t\\t\\n\\t\\t$ymapsScript = \'<script type=\\"text\\/javascript\\">\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'if(typeof ymaps == \\"undefined\\"){\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'document.write(\\\\\'<script type=\\"text\\/javascript\\" src=\\"\\/\\/api-maps.yandex.ru\\/2.1\\/?lang=ru_RU\\" ><\\/\\\\\'+\\\\\'script>\\\\\');\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'}\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'<\\/script>\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t\\n\\t\\t$modx->regClientStartupScript($ymapsScript, true);\\n\\t\\tbreak;\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"$corePath = $modx->getOption(\'core_path\',null,MODX_CORE_PATH).\'components\\/yandexcoordstv\\/\';\\nswitch ($modx->event->name) {\\n    case \'OnTVInputRenderList\':\\n        $modx->event->output($corePath.\'tv\\/input\\/\');\\n        break;\\n    case \'OnTVOutputRenderList\':\\n        $modx->event->output($corePath.\'tv\\/output\\/\');\\n        break;\\n    case \'OnTVInputPropertiesList\':\\n        $modx->event->output($corePath.\'tv\\/inputoptions\\/\');\\n        break;\\n    case \'OnTVOutputRenderPropertiesList\':\\n        $modx->event->output($corePath.\'tv\\/properties\\/\');\\n        break;\\n    case \'OnManagerPageBeforeRender\':\\n        break;\\n    \\tcase \'OnDocFormRender\':\\n\\t\\t\\n\\t\\t$jqueryScript = \'<script type=\\"text\\/javascript\\">\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'if(typeof jQuery == \\"undefined\\"){\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'document.write(\\\\\'<script type=\\"text\\/javascript\\" src=\\"\\/\\/yandex.st\\/jquery\\/2.1.1\\/jquery.min.js\\" ><\\/\\\\\'+\\\\\'script>\\\\\');\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'}\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t$jqueryScript .= \'<\\/script>\';\\n\\t\\t$jqueryScript .= \\"\\\\n\\";\\n\\t\\t\\n\\t\\t$modx->regClientStartupScript($jqueryScript, true);\\n\\t\\t\\n\\t\\t\\n\\t\\t$ymapsScript = \'<script type=\\"text\\/javascript\\">\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'if(typeof ymaps == \\"undefined\\"){\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'document.write(\\\\\'<script type=\\"text\\/javascript\\" src=\\"\\/\\/api-maps.yandex.ru\\/2.1\\/?lang=ru_RU\\" ><\\/\\\\\'+\\\\\'script>\\\\\');\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'}\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t$ymapsScript .= \'<\\/script>\';\\n\\t\\t$ymapsScript .= \\"\\\\n\\";\\n\\t\\t\\n\\t\\t$modx->regClientStartupScript($ymapsScript, true);\\n\\t\\tbreak;\\n}"}',
+        'guid' => 'ffc7fcbd4cdece9eda69fd84af190daf',
+        'native_key' => NULL,
+        'signature' => '281c18981bc0742d8a9df19d85910cd8',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '5d1013039a500df389798a352618a501' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormRender","priority":0,"propertyset":0}',
+              'guid' => '662eb16c39279a598cdf1a56c437704f',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormRender',
+              ),
+              'signature' => '88fbc6fc174b041b149db56860d512b8',
+            ),
+            '02c4ed2552a65738223e3faf1926d6a5' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVInputRenderList","priority":0,"propertyset":0}',
+              'guid' => 'fd31e35dc510a1c0b4ce1b90d69e0a2f',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVInputRenderList',
+              ),
+              'signature' => 'd2d0ffca658281207dc6435e1d6711ec',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => false,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => false,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'resolve' => 
+  array (
+    0 => NULL,
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"yandexcoordstv-1.0.0-beta\\/modCategory\\/ddc1e6ac358c0c092592d24152247b13\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"yandexcoordstv"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '852a97ff2e8bf5da7e8f9572bab8f592',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'ddc1e6ac358c0c092592d24152247b13',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"yandexcoordstv","rank":0}',
+);

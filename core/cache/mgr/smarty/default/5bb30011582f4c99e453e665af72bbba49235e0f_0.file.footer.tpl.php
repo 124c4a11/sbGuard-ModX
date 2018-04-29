@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2018-04-26 15:48:23
+/* Smarty version 3.1.31, created on 2018-04-29 17:20:40
   from "F:\OpenServer\domains\MODX.loc\manager\templates\default\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5ae1ca975857c8_56069360',
+  'unifunc' => 'content_5ae5d4b8362bf7_87362943',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ae1ca975857c8_56069360 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ae5d4b8362bf7_87362943 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     </div>
     <!-- #modx-content-->

@@ -6,6 +6,7 @@
   array (
     'index' => 1,
     'o-kompanii' => 2,
+    'kontaktyi' => 3,
   ),
   'resourceMap' => 
   array (
@@ -13,6 +14,7 @@
     array (
       0 => 1,
       1 => 2,
+      2 => 3,
     ),
   ),
   'webLinkMap' => 
@@ -29,6 +31,10 @@
       6 => '6',
       4 => '4',
       1 => '1',
+    ),
+    'OnDocFormRender' => 
+    array (
+      10 => '10',
     ),
     'OnDocFormSave' => 
     array (
@@ -95,6 +101,7 @@
     ),
     'OnTVInputRenderList' => 
     array (
+      10 => '10',
       6 => '6',
     ),
     'OnWebPagePrerender' => 
@@ -859,6 +866,69 @@ if (is_array($resizeConfigs) && count($resizeConfigs) > 0) {
       'moduleguid' => '',
       'static' => '0',
       'static_file' => 'core/components/bannery/elements/plugins/plugin.banneryclickout.php',
+    ),
+    10 => 
+    array (
+      'id' => '10',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'YandexCoordsTv',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '7',
+      'cache_type' => '0',
+      'plugincode' => '$corePath = $modx->getOption(\'core_path\',null,MODX_CORE_PATH).\'components/yandexcoordstv/\';
+switch ($modx->event->name) {
+    case \'OnTVInputRenderList\':
+        $modx->event->output($corePath.\'tv/input/\');
+        break;
+    case \'OnTVOutputRenderList\':
+        $modx->event->output($corePath.\'tv/output/\');
+        break;
+    case \'OnTVInputPropertiesList\':
+        $modx->event->output($corePath.\'tv/inputoptions/\');
+        break;
+    case \'OnTVOutputRenderPropertiesList\':
+        $modx->event->output($corePath.\'tv/properties/\');
+        break;
+    case \'OnManagerPageBeforeRender\':
+        break;
+    	case \'OnDocFormRender\':
+		
+		$jqueryScript = \'<script type="text/javascript">\';
+		$jqueryScript .= "\\n";
+		$jqueryScript .= \'if(typeof jQuery == "undefined"){\';
+		$jqueryScript .= "\\n";
+		$jqueryScript .= \'document.write(\\\'<script type="text/javascript" src="//yandex.st/jquery/2.1.1/jquery.min.js" ></\\\'+\\\'script>\\\');\';
+		$jqueryScript .= "\\n";
+		$jqueryScript .= \'}\';
+		$jqueryScript .= "\\n";
+		$jqueryScript .= \'</script>\';
+		$jqueryScript .= "\\n";
+		
+		$modx->regClientStartupScript($jqueryScript, true);
+		
+		
+		$ymapsScript = \'<script type="text/javascript">\';
+		$ymapsScript .= "\\n";
+		$ymapsScript .= \'if(typeof ymaps == "undefined"){\';
+		$ymapsScript .= "\\n";
+		$ymapsScript .= \'document.write(\\\'<script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU" ></\\\'+\\\'script>\\\');\';
+		$ymapsScript .= "\\n";
+		$ymapsScript .= \'}\';
+		$ymapsScript .= "\\n";
+		$ymapsScript .= \'</script>\';
+		$ymapsScript .= "\\n";
+		
+		$modx->regClientStartupScript($ymapsScript, true);
+		break;
+}',
+      'locked' => '0',
+      'properties' => NULL,
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
     ),
   ),
   'policies' => 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2018-04-26 16:03:08
+/* Smarty version 3.1.31, created on 2018-04-29 17:21:09
   from "F:\OpenServer\domains\MODX.loc\manager\templates\default\resource\sections\tvs.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5ae1ce0c1f2774_16043834',
+  'unifunc' => 'content_5ae5d4d58185d8_44134223',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ae1ce0c1f2774_16043834 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ae5d4d58185d8_44134223 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once 'F:\\OpenServer\\domains\\MODX.loc\\core\\model\\smarty\\plugins\\function.cycle.php';
 echo $_smarty_tpl->tpl_vars['OnResourceTVFormPrerender']->value;?>
 

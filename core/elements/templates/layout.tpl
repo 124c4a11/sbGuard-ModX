@@ -334,6 +334,7 @@
 <script src="assets/libs/object-fit/ofi.min.js"></script>
 <script defer src="assets/libs/photoswipe/photoswipe.min.js"></script>
 <script defer src="assets/libs/photoswipe/photoswipe-ui-default.min.js"></script>
+{block 'scripts'}{/block}
 <script src="assets/js/main.js"></script>
 </body>
 </html>
