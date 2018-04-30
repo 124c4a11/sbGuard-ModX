@@ -25,6 +25,19 @@
     'namespace_path' => 'F:/OpenServer/domains/MODX.loc/core/components/clientconfig/',
     'namespace_assets_path' => '{assets_path}components/clientconfig/',
   ),
+  5 => 
+  array (
+    'id' => '5',
+    'namespace' => 'collections',
+    'controller' => 'index',
+    'haslayout' => '1',
+    'lang_topics' => 'collections:default',
+    'assets' => '',
+    'help_url' => '',
+    'namespace_name' => 'collections',
+    'namespace_path' => 'F:/OpenServer/domains/MODX.loc/core/components/collections/',
+    'namespace_assets_path' => '{assets_path}components/collections/',
+  ),
   4 => 
   array (
     'id' => '4',

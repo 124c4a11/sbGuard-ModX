@@ -12,6 +12,14 @@
   ),
   'eventMap' => 
   array (
+    'OnBeforeDocFormSave' => 
+    array (
+      13 => '13',
+    ),
+    'OnBeforeEmptyTrash' => 
+    array (
+      13 => '13',
+    ),
     'OnChunkFormPrerender' => 
     array (
       1 => '1',
@@ -19,12 +27,14 @@
     'OnDocFormPrerender' => 
     array (
       6 => '6',
+      13 => '13',
       1 => '1',
       4 => '4',
     ),
     'OnDocFormRender' => 
     array (
       10 => '10',
+      13 => '13',
     ),
     'OnDocFormSave' => 
     array (
@@ -55,11 +65,13 @@
       12 => '12',
       1 => '1',
       4 => '4',
+      13 => '13',
       11 => '11',
     ),
     'OnManagerPageInit' => 
     array (
       4 => '4',
+      13 => '13',
     ),
     'OnMODXInit' => 
     array (
@@ -73,6 +85,10 @@
     'OnPluginFormPrerender' => 
     array (
       1 => '1',
+    ),
+    'OnResourceBeforeSort' => 
+    array (
+      13 => '13',
     ),
     'OnRichTextBrowserInit' => 
     array (
@@ -1071,6 +1087,57 @@ switch ($modx->event->name) {
       'moduleguid' => '',
       'static' => '0',
       'static_file' => 'core/components/controlerrorlog/elements/plugins/plugin.controlerrorlog.php',
+    ),
+    13 => 
+    array (
+      'id' => '13',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'Collections',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '11',
+      'cache_type' => '0',
+      'plugincode' => '/**
+ * Collections
+ *
+ * DESCRIPTION
+ *
+ * This plugin inject JS to handle proper working of close buttons in Resource\'s panel (OnDocFormPrerender)
+ * This plugin handles setting proper show_in_tree parameter (OnBeforeDocFormSave, OnResourceSort)
+ *
+ * @var modX $modx
+ * @var array $scriptProperties
+ */
+$corePath = $modx->getOption(\'collections.core_path\', null, $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components/collections/\');
+/** @var Collections $collections */
+$collections = $modx->getService(
+    \'collections\',
+    \'Collections\',
+    $corePath . \'model/collections/\',
+    array(
+        \'core_path\' => $corePath
+    )
+);
+
+$className = \'Collections\' . $modx->event->name;
+
+$modx->loadClass(\'CollectionsPlugin\', $collections->getOption(\'modelPath\') . \'collections/events/\', true, true);
+$modx->loadClass($className, $collections->getOption(\'modelPath\') . \'collections/events/\', true, true);
+
+if (class_exists($className)) {
+    /** @var CollectionsPlugin $handler */
+    $handler = new $className($modx, $scriptProperties);
+    $handler->run();
+}
+
+return;',
+      'locked' => '0',
+      'properties' => 'a:0:{}',
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
     ),
   ),
   'policies' => 

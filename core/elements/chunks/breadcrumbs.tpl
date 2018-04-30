@@ -3,7 +3,7 @@
   'tplWrapper' => '@INLINE <div class="breadcrumbs">{$output}</div>',
   'tpl' => '@INLINE <a href="{$link}" class="breadcrumbs__item">{$menutitle}</a>',
   'tplCurrent' => '@INLINE <span class="breadcrumbs__item breadcrumbs__item--active">{$menutitle}</span>',
-  'outputSeparator' => '@INLINE &nbsp;/&nbsp;'
+  'outputSeparator' => '&nbsp;/&nbsp;'
 ])}
 
 {* <div class="breadcrumbs">
