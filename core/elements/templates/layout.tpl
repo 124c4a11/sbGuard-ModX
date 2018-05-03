@@ -183,8 +183,14 @@
         <span itemprop="email">{$_modx->config.company_email}</span>
       </div>
     </div>
-    <form action="/build/search.html" id="search-form" class="search-form" method="get">
-      <input type="search" name="search" id="search" class="search-form__field" title="Поиск по сайту" placeholder="Введите поисковую фразу">
+    <form action="{$_modx->makeUrl(15)}" id="search-form" class="search-form" method="get">
+      <input
+        type="search"
+        name="query"
+        id="search"
+        class="search-form__field"
+        title="Поиск по сайту"
+        placeholder="Введите поисковую фразу">
       <button type="submit" class="search-form__button">
         <svg class="site-icon icon-search" aria-hidden="true">
           <use xlink:href="assets/img/svg/svg-symbols.svg#search"></use>
