@@ -8,11 +8,13 @@
       <h1>{$_modx->resource.pagetitle}</h1>
 
         {$_modx->runSnippet('!mSearch2', [
+          'htagOpen' => '<mark>',
+          'htagClose' => '</mark>',
           'tplWrapper' => '@INLINE
             <div class="search-result">
               <div class="search-result-header">
-                <div class="search-result-header__title">Найдено <span>{$weight}</span> позиции в результате поиска по запросу
-                  "<span>Камера</span>"
+                <div class="search-result-header__title">Найдено <span>[[+total]]</span> позиции в результате поиска по запросу
+                  "<span>{$query}</span>"
                 </div>
               </div>
               <ul class="search-result-list">{$output}</ul>
@@ -42,14 +44,7 @@
                 </ul>
               </div>
             </div>',
-          'tpl' => '@INLINE
-            <li class="search-result-list__result-item">
-              <a href="{$uri}" class="search-result-list__result-link">{$pagetitle}</a>
-              <div class="search-result-breadcrumbs">
-                Раздел: <span class="search-result-breadcrumbs__value">{$parent}</span>
-              </div>
-              <div class="search-result-list__result-desc">{$intro}</div>
-            </li>'
+          'tpl' => '@FILE chunks/search/searchItem.tpl'
         ])}
         {* <ul class="search-result-list">
           <li class="search-result-list__result-item">

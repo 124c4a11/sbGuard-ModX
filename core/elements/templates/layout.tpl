@@ -190,6 +190,7 @@
         id="search"
         class="search-form__field"
         title="Поиск по сайту"
+        value="[[+mse2_query]]"
         placeholder="Введите поисковую фразу">
       <button type="submit" class="search-form__button">
         <svg class="site-icon icon-search" aria-hidden="true">
