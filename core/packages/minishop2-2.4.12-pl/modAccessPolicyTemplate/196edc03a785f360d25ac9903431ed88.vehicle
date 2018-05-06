@@ -1,0 +1,233 @@
+<?php return array (
+  'preserve_keys' => false,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Permissions' => 
+    array (
+      '2858b00bf8526875f21d65b6edfdc78c' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"mscategory_save","description":"mscategory_save","value":1}',
+        'guid' => '40389474254d732cdbcd05cbd8253b83',
+        'native_key' => NULL,
+        'signature' => '2010f1f185deecc35a1ab62326ce693c',
+      ),
+      '1b90e0216b891f00534da927c161411e' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msproduct_save","description":"msproduct_save","value":1}',
+        'guid' => 'e77a09da376130dd51e7d3a616452c78',
+        'native_key' => NULL,
+        'signature' => 'bd514207fc3343496d5f57d6d572c433',
+      ),
+      'a8d91367df8321df2ef35f99ed809ca6' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msproduct_publish","description":"msproduct_publish","value":1}',
+        'guid' => 'f4ac8c51300f92d5cc22858591307726',
+        'native_key' => NULL,
+        'signature' => '28efd16360f5721f2c2ee05215b8cda2',
+      ),
+      '4f3d766cbea7528c7cfd648dea2b6d8a' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msproduct_delete","description":"msproduct_delete","value":1}',
+        'guid' => '5bf9d94885ee84b6302b691137961cf2',
+        'native_key' => NULL,
+        'signature' => '1461d926ec072fdf83683ca71b2ba2fb',
+      ),
+      '78913cdc6c32a9db23a662d38978f258' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msorder_save","description":"msorder_save","value":1}',
+        'guid' => '1b22146e601948a6d9393a54f7d80a35',
+        'native_key' => NULL,
+        'signature' => '7d364212bca3a123d7101733eb7edac7',
+      ),
+      '5d193a64197dc87d06da8fefa5e713e8' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msorder_view","description":"msorder_view","value":1}',
+        'guid' => 'fc45809f52111efc3c08d472ce3c8632',
+        'native_key' => NULL,
+        'signature' => '4fb686ad3b0310671bb15aae98a54f95',
+      ),
+      '75f27369b867e8007825012759583b2a' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msorder_list","description":"msorder_list","value":1}',
+        'guid' => '524ce220d65da50fd123abb4775271d8',
+        'native_key' => NULL,
+        'signature' => 'c486e72458932f3bed3cbae3b0b53f74',
+      ),
+      'fd5fca8682e266ba987f3bfa352aa022' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"mssetting_save","description":"mssetting_save","value":1}',
+        'guid' => 'a403a1a81a54a1296a5df019069f149a',
+        'native_key' => NULL,
+        'signature' => '76b6381ca678c5bacffac7184ceb6f33',
+      ),
+      'e5711e53cf327dfcdda02b13036bbef8' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"mssetting_view","description":"mssetting_view","value":1}',
+        'guid' => 'e1636a5faf78cc0c461ffaa946191e39',
+        'native_key' => NULL,
+        'signature' => '5dbee768376783afc6ae1c1cb0a58b5e',
+      ),
+      'e72180aba657f5aa20ce79999499fe08' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"mssetting_list","description":"mssetting_list","value":1}',
+        'guid' => '20036467db6898e46d3fa83bc304f0b2',
+        'native_key' => NULL,
+        'signature' => '4f83415126d9ed0e99b919bfa82cde98',
+      ),
+      '3df6e7ba0b38772a080fe24cbe64a4ce' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msproductfile_save","description":"msproductfile_save","value":1}',
+        'guid' => 'ee42d3d0129a798ba7beb3fcac643405',
+        'native_key' => NULL,
+        'signature' => '4d825ece5ceeac4c0d5f0cb6190682e5',
+      ),
+      '3203d8e94adc9469357c7185cb47f4f1' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msproductfile_generate","description":"msproductfile_generate","value":1}',
+        'guid' => 'fe84349eef5274ac35404622ede30bc8',
+        'native_key' => NULL,
+        'signature' => '70c856122919ada6374115b586f32af6',
+      ),
+      '4a59b5506aa7a1104b0fa9e914aeb3ac' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"msproductfile_list","description":"msproductfile_list","value":1}',
+        'guid' => '32cf1bd2fac203fb3266f590cafc6840',
+        'native_key' => NULL,
+        'signature' => '02504db149ca31ede8f38a2d021dab1f',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Permissions' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'template',
+        1 => 'name',
+      ),
+    ),
+  ),
+  'namespace' => 'minishop2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ae67645f682a4189e3248502785911fc',
+  'package' => 'modx',
+  'class' => 'modAccessPolicyTemplate',
+  'signature' => '196edc03a785f360d25ac9903431ed88',
+  'native_key' => NULL,
+  'object' => '{"id":null,"template_group":1,"name":"miniShopManagerPolicyTemplate","description":"A policy for miniShop2 managers.","lexicon":"minishop2:permissions","permissions":{"mscategory_save":[],"msproduct_save":[],"msproduct_publish":[],"msproduct_delete":[],"msorder_save":[],"msorder_view":[],"msorder_list":[],"mssetting_save":[],"mssetting_view":[],"mssetting_list":[],"msproductfile_save":[],"msproductfile_generate":[],"msproductfile_list":[]}}',
+);

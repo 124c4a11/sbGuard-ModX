@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'update_object' => true,
+  'namespace' => 'minishop2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'cd7e8139150f474f949b8606a4004d57',
+  'package' => 'modx',
+  'class' => 'modAccessPolicy',
+  'signature' => 'cfff36b1be15f5db22e784ddb654bf18',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"miniShopManagerPolicy","description":"A policy for create and update miniShop categories and products.","parent":0,"template":0,"class":"","data":"{\\"mscategory_save\\":true,\\"msproduct_save\\":true,\\"msproduct_publish\\":true,\\"msproduct_delete\\":true,\\"msorder_save\\":true,\\"msorder_view\\":true,\\"msorder_list\\":true,\\"mssetting_save\\":true,\\"mssetting_view\\":true,\\"mssetting_list\\":true,\\"msproductfile_save\\":true,\\"msproductfile_generate\\":true,\\"msproductfile_list\\":true}","lexicon":"minishop2:permissions"}',
+);
