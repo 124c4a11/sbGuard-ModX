@@ -287,7 +287,7 @@
     </div>
   </div>
 </footer>
-{* pswp *}
+{block 'pswp'}{/block}
 <div class="overlay">
   <input type="checkbox" id="mob-menu" class="mob-menu-checker-input" aria-hidden="true" title="Мобильное меню">
   <div class="mob-menu-block">
