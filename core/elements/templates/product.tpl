@@ -26,45 +26,41 @@
         </div>
 
         <div class="product-detail-block__desc-wrapper">
-                <h1 class="product-block__product-title product-block__product-title--detail">HiWatch HD (1280x720)
-                </h1>
-                <div class="availability">Наличие: <span class="availability__value yes">В наличии</span></div>
-                <div class="product-detail-block__article">Артикул: <span class="product-detail-block__article__value">171054</span>
-                </div>
-                <p class="product-detail-block__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at, beatae delectus eos esse ex
-                        fugit id ipsum iure minima nesciunt nisi nobis odit quaerat recusandae sequi sint sit
-                        voluptate?
-                </p>
-                <div class="product-detail-block__product-prices">
-                        <span class="product-detail-block__price-title">Цена: </span>
-                        <div class="product-block__product-price product-block__product-price--detail">
-                                15 380 <span class="currency">&#8381;</span>
-                        </div>
-                        <div class="product-block__product-price product-block__product-price--old-price product-block__product-price--detail">
-                                20 240 <span class="currency">&#8381;</span>
-                        </div>
-                </div>
-                <div class="product-detail-block__quantity">
-                        <label for="quantity" class="quantity-label">Количество:</label>
-                        <input type="number" id="quantity" class="quantity-input" maxlength="2" value="1" min="1" max="100">
-                </div>
-                <div class="product-detail-block__to-buy">
-                        <div class="commerce-buttons">
-                                <form method="get" class="product-block__cart-button ms2_form">
-                                        <input type="hidden" name="id" value="162">
-                                        <input type="hidden" name="count" value="1">
-                                        <input type="hidden" name="options" value="[]">
-                                        <button type="submit" name="ms2_action" value="cart/add"
-                                                        class="button" title="положить в корзину">
-                                                <svg class="site-icon icon-user" aria-hidden="true">
-                                                        <use xlink:href="assets/img/svg/svg-symbols.svg#shopping_cart"></use>
-                                                </svg>
-                                                <span class="button__text button__text--as-link">В корзину</span>
-                                        </button>
-                                </form>
-                        </div>
-                </div>
+          <h1 class="product-block__product-title product-block__product-title--detail">{$_modx->resource.pagetitle}</h1>
+          <div class="product-detail-block__article">Артикул: <span class="product-detail-block__article__value">{$_modx->resource.article}</span>
+          </div>
+          <p class="product-detail-block__desc">{$_modx->resource.description}</p>
+          <div class="product-detail-block__product-prices">
+            <span class="product-detail-block__price-title">Цена: </span>
+            <div class="product-block__product-price product-block__product-price--detail">
+              {$_modx->resource.price} <span class="currency">&#8381;</span>
+            </div>
+
+            {if $_modx->resource.old_price?}
+              <div class="product-block__product-price product-block__product-price--old-price product-block__product-price--detail">
+                {$_modx->resource.old_price} <span class="currency">&#8381;</span>
+              </div>
+            {/if}
+          </div>
+          <div class="product-detail-block__quantity">
+            <label for="quantity" class="quantity-label">Количество:</label>
+            <input type="number" id="quantity" class="quantity-input" maxlength="2" value="1" min="1" max="100">
+          </div>
+          <div class="product-detail-block__to-buy">
+            <div class="commerce-buttons">
+              <form method="post" class="product-block__cart-button ms2_form">
+                <input type="hidden" name="id" value="{$_modx->resource.id}">
+                <input type="hidden" name="count" value="1">
+                <input type="hidden" name="options" value="[]">
+                <button type="submit" name="ms2_action" value="cart/add" class="button" title="положить в корзину">
+                  <svg class="site-icon icon-user" aria-hidden="true">
+                    <use xlink:href="assets/img/svg/svg-symbols.svg#shopping_cart"></use>
+                  </svg>
+                  <span class="button__text button__text--as-link">В корзину</span>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
 
