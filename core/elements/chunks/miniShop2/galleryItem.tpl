@@ -1,3 +1,5 @@
+{$_modx->setPlaceholder('og_image',$files[0]['og'])}
+
 {foreach $files as $file}
   <figure class="product-slider__item">
     <img class="product-slider__item-img"

@@ -1,5 +1,14 @@
 {extends 'file:templates/layout.tpl'}
 
+{block 'microdata'}
+  <meta property="og:site_name" content="{$_modx->config.site_name}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{$_modx->resource.logtitle ?: $_modx->resource.pagetitle}">
+  <meta property="og:description" content="{$_modx->resource.description}">
+  <meta property="og:url" content="{$_modx->makeUrl($_modx->resource.id, '', '', 'full')}">
+  <meta property="og:image" content="http://{$_modx->config.http_host}[[+og_image]]">
+{/block}
+
 {block 'main'}
   <div class="content-wrapper container">
     <main class="main-content main-content--text">
