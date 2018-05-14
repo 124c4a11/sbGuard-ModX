@@ -8,7 +8,7 @@
       </figure>
     {else}
       <figure class="img-placeholder img-placeholder--product-block">
-        <img src="assets/img/no_photo.jpg" alt="no photo" class="loaded">
+        <img src="assets/img/no_photo.jpg" alt="{$pagetitle}" class="loaded">
       </figure>
     {/if}
   </a>
