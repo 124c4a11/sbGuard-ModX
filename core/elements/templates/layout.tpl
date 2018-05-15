@@ -201,12 +201,9 @@
     </form>
   </div>
     <div class="cart-block flexl-hack fix-min-height">
-      <div class="cart-block__cart-cost" data-currency="&#8381;">47 500</div>
-      <a href="basket.html" class="cart-block__cart-icon" data-count="0">
-        <svg class="site-icon icon-shopping_cart" aria-hidden="true">
-          <use xlink:href="assets/img/svg/svg-symbols.svg#shopping_cart"></use>
-        </svg>
-      </a>
+      {$_modx->runSnippet('!msMiniCart', [
+        'tpl' => '@FILE chunks/miniShop2/miniCart.tpl'
+      ])}
     </div>
 </header>
 <nav class="nav-block fix-min-height" itemscope itemtype="http://schema.org/SiteNavigationElement">
