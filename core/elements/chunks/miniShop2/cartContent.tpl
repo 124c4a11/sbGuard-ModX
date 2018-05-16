@@ -64,6 +64,6 @@
       </div>
     </div>
 
-    <a href="order.html" class="button button-confirm">Перейти к оформлению заказа</a>
+    <a href="{$_modx->makeUrl(27)}" class="button button-confirm">Перейти к оформлению заказа</a>
   {/if}
 </div>
