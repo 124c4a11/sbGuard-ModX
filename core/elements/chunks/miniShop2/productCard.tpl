@@ -1,4 +1,4 @@
-<div class="product-block circle-blob {if $new?}new{/if}{if $favorite?}hot{/if}{if $popular?}sale{/if}"
+<div class="product-block {if $new?}circle-blob new{/if}{if $favorite?}circle-blob hot{/if}{if $popular?}circle-blob sale{/if}"
   data-state="{if $new?}NEW{/if}{if $favorite}HOT{/if}{if $popular?}SALE{/if}">
 
   <a href="{$uri}" class="product-block__product-image">
